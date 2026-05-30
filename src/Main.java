@@ -36,37 +36,34 @@ public class Main {
 
     public static void task3ver1(String[] args) {
         int payment = 1000;
-        int dailyPayment = 100;
-        int duration = 0;
-        while (payment >= dailyPayment) {
-            duration++;
-            if (duration % 5 == 0) {
-                System.out.println("Каждый пятый день парковка бесплатна! Поздравляю!");
-                continue;
-            }
-            if (payment < dailyPayment) {
+        int day = 1;
+        while (true) {
+            if (payment < 100) {
+                System.out.println("Вам доступно - " + day + " дней.");
                 break;
             }
-            payment = payment - dailyPayment;
-            System.out.println("Колличество доступных дней - " + duration);
+            day++;
+            if (day % 5 == 0) {
+                continue;
+            }
+            payment -= 100;
         }
         task3ver2(args);
     }
 
     public static void task3ver2(String[] args) {
-        int payment = 1500;
-        int dailyPayment = 100;
-        for (int i = 1; payment >= dailyPayment; i++) {
-            if (i % 5 == 0) {
-                System.out.println("Каждый пятый день парковка бесплатна! Поздравляю!");
-                continue;
-            }
-            if (payment < dailyPayment) {
+        int payment = 1000;
+        int day = 1;
+        for (;;) {
+            if (payment < 100) {
+                System.out.println("Вам доступно - " + day + " дней.");
                 break;
             }
-            payment = payment - dailyPayment;
-            System.out.println("Колличество доступных дней - " + i);
-
+            day++;
+            if (day % 5 == 0) {
+                continue;
+            }
+            payment -= 100;
         }
         task4(args);
     }
