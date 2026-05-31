@@ -100,14 +100,15 @@ public class Main {
                 minute ++;
                 overheats ++;
                 continue;
-            } else if (overheats > 0 && charge % 20 == 0 && overheatsLvl < 1) {
+            }
+            if (overheats > 0 && charge % 20 == 0 && overheatsLvl < 1) {
                 minute ++;
                 overheats++;
                 overheatsLvl++;
                 continue;
-            } else {charge += 2;
-                overheatsLvl = 0;
             }
+            charge += 2;
+            overheatsLvl = 0;
         }
     }
 }
